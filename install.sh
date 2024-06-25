@@ -15,7 +15,7 @@ display_welcome() {
   echo -e "${BLUE}[+]                AUTO INSTALLER THEMA             [+]${NC}"
   echo -e "${BLUE}[+]                  © VALLZ OFFC                [+]${NC}"
   echo -e "${BLUE}[+]                                                 [+]${NC}"
-  echo -e "${BLUE}[+] =============================================== [+]${NC}"
+  echo -e "${RED}[+] =============================================== [+]${NC}"
   echo -e ""
   echo -e "script ini di buat untuk mempermudah penginstalasian thema pterodactyle,"
   echo -e "dilarang keras untuk memperjual belikan."
@@ -23,7 +23,7 @@ display_welcome() {
   echo -e "𝗪𝗛𝗔𝗧𝗦𝗔𝗣𝗣 :"
   echo -e "0856-4122-5753"
   echo -e "𝗬𝗢𝗨𝗧𝗨𝗕𝗘 :"
-  echo -e "@Vallz134"
+  echo -e "@vallz134"
   echo -e "𝗖𝗥𝗘𝗗𝗜𝗧𝗦 :"
   echo -e "@VallzOffc"
   sleep 4
@@ -66,10 +66,10 @@ check_token() {
   echo -e "${YELLOW}MASUKAN AKSES TOKEN :${NC}"
   read -r USER_TOKEN
 
-  if [ "$USER_TOKEN" = "foxstore" ]; then
+  if [ "$USER_TOKEN" = "VallzOffc" ]; then
     echo -e "${GREEN}AKSES BERHASIL${NC}}"
   else
-    echo -e "${GREEN}AKSES GAGAL${NC}"
+    echo -e "${GREEN}Buy dulu Weh Ke Vallzoffc No 6285641225753${NC}"
     exit 1
   fi
   clear
@@ -181,7 +181,7 @@ elif [ "$SELECT_THEME" -eq 3 ]; then
   echo -e "                                                                   "
 
     # Menanyakan informasi kepada pengguna untuk tema Enigma
-    echo -e "${YELLOW}Masukkan link wa (https://wa.me/) : ${NC}"
+    echo -e "${YELLOW}Masukkan link wa (https://wa.me...) : ${NC}"
     read LINK_WA
     echo -e "${YELLOW}Masukkan link group (https://.....) : ${NC}"
     read LINK_GROUP
