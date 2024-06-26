@@ -34,4 +34,5 @@ while true; do
         [Nn]* ) exit;;
         * ) echo "silahkan pilih (y/yes) (n/no).";;
     esac
+exit 1 
 done
