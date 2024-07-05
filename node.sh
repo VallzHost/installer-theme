@@ -6,6 +6,7 @@ read -p "Masukkan Nama Node : " nameloc
 $nameloc
 read -p "Masukkan Desc Node : " descloc
 $descloc
+cd /var/www/pterodactyl
 php artisan p:node:make
 read -p "Masukkan Nama Node : " namenode
 $namenode
