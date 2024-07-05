@@ -3,9 +3,11 @@
 # Minta input dari pengguna
 read -p "Masukkan nama lokasi: " location_name
 read -p "Masukkan deskripsi lokasi: " location_description
-read -p "Masukkan subdomainnode: " domain
+read -p "Masukkan domain: " domain
 read -p "Masukkan nama node: " node_name
-read -p "Masukkan RAM (dalam MB Contoh 800000 ): " ram
+read -p "Masukkan RAM (dalam MB): " ram
+read -p "Masukkan jumlah maksimum disk space (dalam MB): " disk_space
+read -p "Masukkan Location id: " locid
 
 # Ubah ke direktori pterodactyl
 cd /var/www/pterodactyl || { echo "Direktori tidak ditemukan"; exit 1; }
@@ -20,15 +22,15 @@ EOF
 php artisan p:node:make <<EOF
 $node_name
 Auto Create Node By VallzOffc
-1
+$locid
 $domain
 yes
 no
 no
 $ram
 $ram
-90000
-90000
+$disk_space
+$disk_space
 100
 8080
 2022
