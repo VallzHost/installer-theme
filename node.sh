@@ -1,31 +1,38 @@
 #!/bin/bash
 
-cd /var/www/pterodactyl
-php artisan p:location:make
-read -p "Masukkan Nama Node : " nameloc
-$nameloc
-read -p "Masukkan Desc Node : " descloc
-$descloc
-cd /var/www/pterodactyl
-php artisan p:node:make
-read -p "Masukkan Nama Node : " namenode
-$namenode
-read -p "Masukkan Desc Node : " descnode
-$descnode
-read -p "Tekan Enter Untuk Melanjutkan: "
-read -p "Masukkan Domain Node untuk Configurasi : " domainnode
-$domainnode
-read -p "Tekan Enter Untuk Melanjutkan: "
-read -p "Tekan Enter Untuk Melanjutkan: "
-read -p "Tekan Enter Untuk Melanjutkan: "
-read -p "Masukkan Ramvps Contoh 8gb: 8000000 : " ramvps
-$ramvps
-$ramvps
-$ramvps
-$ramvps
-read -p "Tekan Enter Untuk Melanjutkan: "
-read -p "Tekan Enter Untuk Melanjutkan: "
-read -p "Tekan Enter Untuk Melanjutkan: "
-read -p "Masukkan Ramvps Contoh 8gb: "
-read -p "Tekan Enter Untuk Melanjutkan: "
-echo "Create Node selesai."
+# Minta input dari pengguna
+read -p "Masukkan nama lokasi: " location_name
+read -p "Masukkan deskripsi lokasi: " location_description
+read -p "Masukkan subdomainnode: " domain
+read -p "Masukkan nama node: " node_name
+read -p "Masukkan RAM (dalam MB Contoh 800000 ): " ram
+
+# Ubah ke direktori pterodactyl
+cd /var/www/pterodactyl || { echo "Direktori tidak ditemukan"; exit 1; }
+
+# Membuat lokasi baru
+php artisan p:location:make <<EOF
+$location_name
+$location_description
+EOF
+
+# Membuat node baru
+php artisan p:node:make <<EOF
+$node_name
+Auto Create Node By VallzOffc
+1
+$domain
+yes
+no
+no
+$ram
+$ram
+90000
+90000
+100
+8080
+2022
+/var/lib/pterodactyl/volumes
+EOF
+
+echo "Proses pembuatan lokasi dan node telah selesai."
