@@ -7,7 +7,7 @@ read -p "Masukkan domain: " domain
 read -p "Masukkan nama node: " node_name
 read -p "Masukkan RAM (dalam MB): " ram
 read -p "Masukkan jumlah maksimum disk space (dalam MB): " disk_space
-read -p "Masukkan Location id: " locid
+read -p "Masukkan Locid: " locid
 
 # Ubah ke direktori pterodactyl
 cd /var/www/pterodactyl || { echo "Direktori tidak ditemukan"; exit 1; }
@@ -21,7 +21,7 @@ EOF
 # Membuat node baru
 php artisan p:node:make <<EOF
 $node_name
-Auto Create Node By VallzOffc
+$location_description
 $locid
 $domain
 yes
