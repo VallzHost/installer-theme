@@ -23,6 +23,7 @@ php artisan p:node:make <<EOF
 $node_name
 $location_description
 $locid
+https
 $domain
 yes
 no
